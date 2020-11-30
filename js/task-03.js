@@ -42,5 +42,5 @@ const createLi = images.reduce((acc, imgObj) => {
 }, []);
 console.dir(createLi);
 ulRef.append(...createLi);
-//============================= END REDUCE ===========
+
 

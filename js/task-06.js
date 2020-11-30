@@ -10,6 +10,7 @@
 // valid и invalid.
 
 
+
 const validInputRef = document.querySelector("#validation-input");
 const inputLength = Number(validInputRef.getAttribute("data-length"));
 
