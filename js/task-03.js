@@ -22,25 +22,10 @@ const images = [
 ];
 
 
+const createLi = (images) =>
+`<li><img src="${images.url}" alt="${images.alt}"></li>`;
 
+const item = images.map(createLi).join("");
 
-// =============================REDUCE============
 const ulRef = document.querySelector("#gallery");
-console.log(ulRef);
-const createLi = images.reduce((acc, imgObj) => {
-  const li = document.createElement("li");
-  li.classList.add("gallery__item");
-  const img = document.createElement("img");
-  img.classList.add("gallery__img");
-  // img.setAtribute("src", img.url);
-  // img.setAtribute("alt", img.alt);
-  img.src = imgObj.url;
-  img.alt = imgObj.alt;
-  li.append(img);
-  acc.push(li);
-  return acc;
-}, []);
-console.dir(createLi);
-ulRef.append(...createLi);
-
-
+ulRef.insertAdjacentHTML("afterbegin", item);
